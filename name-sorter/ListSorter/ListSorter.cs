@@ -5,11 +5,11 @@ namespace name_sorter
 {
     public class ListSorter : IListSorter
     {
-        private readonly List<IPersonModel> _personList;
+        private readonly List<IPersonModel> _peopleList;
 
-        public ListSorter(List<IPersonModel> list)
+        public ListSorter(List<IPersonModel> peopleList)
         {
-            this._personList = list;
+            this._peopleList = peopleList;
         }
 
         public List<IPersonModel> CreateList(string[] records)
@@ -23,16 +23,22 @@ namespace name_sorter
                 person.GivenName = string.Join(" ", recordSplit, 0, recordSplit.Length - 1);
                 person.LastName = recordSplit[recordSplit.Length - 1];
 
-                _personList.Add(person);
+                _peopleList.Add(person);
             }
-            return _personList;
+            return _peopleList;
         }
 
-        public string[] Sort(List<IPersonModel> listRecords)
+        public List<IPersonModel> SortByLastName(List<IPersonModel> listPeople)
         {
-            var sortedList = listRecords.OrderBy(person => person.LastName).ToList();
+            var listSorted = listPeople.OrderBy(person => person.LastName).ToList();
 
-            return sortedList.Select(person => person.FullName.ToString()).ToArray();
+            return listSorted;
+        }
+
+        public string[] ConvertModelToString(List<IPersonModel> listPeople)
+        {
+            var output = listPeople.Select(person => person.FullName.ToString()).ToArray();
+            return output;
         }
     }
 }
