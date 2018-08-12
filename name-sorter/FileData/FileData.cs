@@ -14,6 +14,26 @@ namespace name_sorter
             }
         }
 
+        public bool IsValidFile(string[] file)
+        {
+            if (file.Length == 0)
+            {
+                return false;
+            }
+
+            string validExt = ".txt";
+            string fileExt = Path.GetExtension(file[0]);
+
+            bool validation = validExt.Equals(fileExt);
+
+            if (validation == false)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         public string[] ReadRecords(string inputFile)
         {
             return File.ReadAllLines(inputFile);
@@ -22,6 +42,11 @@ namespace name_sorter
         public void WriteRecords(string[] records)
         {
             File.WriteAllLines(@".\sorted-names-list.txt", records);
+        }
+
+        public void ErrorMessage()
+        {
+            Console.WriteLine("Invalid file");
         }
     }
 }

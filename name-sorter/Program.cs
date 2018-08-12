@@ -9,6 +9,14 @@ namespace name_sorter
             IFileData file = Factory.CreateFileData();
             IListSorter sorter = Factory.CreateListSorter();
 
+            bool fileValidation = file.IsValidFile(args);
+
+            if (fileValidation == false)
+            {
+                file.ErrorMessage();
+                return;
+            }
+
             //Get data from file
             string[] records = file.ReadRecords(args[0]);
             //string[] records = file.ReadRecords(@"D:\Proyectos Visual\name-sorter\name-sorter\unsorted-names-list.txt");

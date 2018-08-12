@@ -5,5 +5,7 @@
         void DisplayRecords(string[] records);
         string[] ReadRecords(string inputFile);
         void WriteRecords(string[] outputFile);
+        bool IsValidFile(string[] file);
+        void ErrorMessage();
     }
 }

@@ -24,6 +24,30 @@ namespace name_sorter.tests
             Assert.Equal(expected[0].FullName, actual[0].FullName);
         }
 
+        [Theory]
+        [InlineData("")]
+        [InlineData("John")]
+        public void IsValidRecord_ShouldBeFalse(string input)
+        {
+            var sorter = Factory.CreateListSorter();
+
+            var validation = sorter.IsValidRecord(input);
+
+            Assert.True(validation == false);
+        }
+
+        [Theory]
+        [InlineData("John Doe")]
+        [InlineData("John David Doe")]
+        public void IsValidRecord_ShouldBeTrue(string input)
+        {
+            var sorter = Factory.CreateListSorter();
+
+            var validation = sorter.IsValidRecord(input);
+
+            Assert.True(validation == true);
+        }
+
         [Fact]
         public void SortByLastName_ShouldWork()
         {

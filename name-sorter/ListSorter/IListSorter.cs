@@ -7,5 +7,6 @@ namespace name_sorter
         List<IPersonModel> CreateList(string[] records);
         List<IPersonModel> SortByLastName(List<IPersonModel> listPeople);
         string[] ConvertModelToString(List<IPersonModel> listPeople);
+        bool IsValidRecord(string record);
     }
 }

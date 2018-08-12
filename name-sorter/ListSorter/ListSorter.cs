@@ -16,6 +16,11 @@ namespace name_sorter
         {
             foreach (string record in records)
             {
+                if (IsValidRecord(record) == false)
+                {
+                    continue;
+                }
+
                 var person = Factory.CreatePerson();
 
                 string[] recordSplit = record.Split(' ');
@@ -39,6 +44,23 @@ namespace name_sorter
         {
             var output = listPeople.Select(person => person.FullName.ToString()).ToArray();
             return output;
+        }
+
+        public bool IsValidRecord(string record)
+        {
+            if (record.Length == 0)
+            {
+                return false;
+            }
+
+            string[] splitName = record.Split(' ');
+
+            if (splitName.Length <= 1)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }
