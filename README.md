@@ -9,9 +9,9 @@ Before you can build this project, you must install and configure the following 
 
 1. [.NET Core 2.0 SDK](https://www.microsoft.com/net/download/archives/): We use .NET Core to run and build the project. We also use .NET Core to manage NuGet dependencies.
 
-Run the following command to run the application in development:
+To install dependencies run:
 
-    dotnet run ./unsorted-names-list.txt
+    dotnet restore
 
 ## Building application
 
