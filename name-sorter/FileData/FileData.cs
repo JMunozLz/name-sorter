@@ -7,7 +7,7 @@ namespace name_sorter
     {
         public void DisplayRecords(string[] records)
         {
-            Console.WriteLine("-----------------------");
+            Console.WriteLine("-----------Sorted List------------");
             foreach (string record in records)
             {
                 Console.WriteLine(record);

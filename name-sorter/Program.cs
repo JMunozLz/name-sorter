@@ -9,6 +9,7 @@ namespace name_sorter
             IFileData file = Factory.CreateFileData();
             IListSorter sorter = Factory.CreateListSorter();
 
+            // Validate file
             bool fileValidation = file.IsValidFile(args);
 
             if (fileValidation == false)
@@ -19,15 +20,19 @@ namespace name_sorter
 
             //Get data from file
             string[] records = file.ReadRecords(args[0]);
-            //string[] records = file.ReadRecords(@"D:\Proyectos Visual\name-sorter\name-sorter\unsorted-names-list.txt");
-            //Create list person
+
+            //Create list people
             var peopleList = sorter.CreateList(records);
-            //Sort list person
+
+            //Sort list people
             var sortedPeopleList = sorter.SortByLastName(peopleList);
-            //Covert to string array
+
+            //Covert list people to string array
             records = sorter.ConvertModelToString(sortedPeopleList);
+
             //Display data
             file.DisplayRecords(records);
+
             //Create file with sorted data
             file.WriteRecords(records);
         }
