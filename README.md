@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/JMunozLz/name-sorter.svg?branch=master)](https://travis-ci.org/JMunozLz/name-sorter)
 # name-sorter
 
+This application will sort by last name for a given list of names in a text file. 
+
 ## Development
 
 Before you can build this project, you must install and configure the following dependencies on your machine:
@@ -17,20 +19,35 @@ To build the binaries and project executable, run:
 
     dotnet build --runtime <RUNTIME_IDENTIFIER>
 
-The binaries created could be found in the folder **.\name-sorter\name-sorter\bin\Debug\netcoreapp2.0\**.
+The binaries created could be found in the folder:
+
+    ./name-sorter/name-sorter/bin/Debug/netcoreapp2.0/
 
 The list of specified runtime identifier could be found on [RID](https://docs.microsoft.com/en-us/dotnet/core/rid-catalog) catalog.
 
 ## Executing application
 
-After building the aplication go to path **.\name-sorter\name-sorter\bin\Debug\netcoreapp2.0\<RUNTIME_IDENTIFIER>**.
-Copy the file **unsorted-names-list.txt** to the folder **.\name-sorter\name-sorter\bin\Debug\netcoreapp2.0\<RUNTIME_IDENTIFIER>**.
+After building the aplication go to path: 
+
+    ./name-sorter/name-sorter/bin/Debug/netcoreapp2.0/<RUNTIME_IDENTIFIER>/
+
+Copy the file:
+
+    unsorted-names-list.txt
+
+Paste to the folder
+
+    ./name-sorter/name-sorter/bin/Debug/netcoreapp2.0/<RUNTIME_IDENTIFIER>/
 
 To execute the application run:
 
     name-sorter ./unsorted-names-list.txt
 
-This will create the file **sorted-names-list.txt** in the same folder with the list of names sorted by last name.
+This will create the file: 
+
+    sorted-names-list.txt
+
+in the same folder with the list of names sorted by last name.
 
 ## Testing
 
