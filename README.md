@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/JMunozLz/name-sorter.svg?branch=master)](https://travis-ci.org/JMunozLz/name-sorter)
 # name-sorter
 
-This application will sort by last name for a given list of names in a text file. 
+Names sorter that generates a text file of names ordered by last name.
 
 ## Development
 
